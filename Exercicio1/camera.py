@@ -15,17 +15,21 @@ while True:
 
     imagem_cinza = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
     deteccoes = detector_face.detectMultiScale(imagem_cinza,minNeighbors=4)
+    #identificando a altura e largura da imagem
     altura, largura = imagem_cinza.shape
 
+    #obtendo os valores do meio da imagem
     centro_x = largura // 2
     centro_y = altura // 2 
 
     for(x,y,w,h) in deteccoes:
         #print(w,h)
         posicao = ""
+        
         centro_rostox = x + w // 2
         centro_rostoy = y + h // 2
 
+        #câmera invertida, as condições irão mostrar a posição real
         if centro_rostox > centro_x and centro_rostoy > centro_y:
             posicao = "Rosto no lado inferior esquerdo"
         elif centro_rostox > centro_x and centro_rostoy < centro_y:
