@@ -18,7 +18,7 @@ print("Detecções:" + str(len(deteccoes_faces)))
 for x,y,w,h in deteccoes_faces:
     print(x,y)
     cv2.rectangle(imagem,(x,y),(x+w,y+h),(0,0,255),3)
-
+    
 cv2.imshow('janela',imagem)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

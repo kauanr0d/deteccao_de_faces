@@ -20,3 +20,4 @@ for faces in deteccoes:
 
 cv2.imshow('Janela4', imagem)
 cv2.waitKey(0)
+cv2.destroyAllWindows()
